@@ -1,2 +1,2 @@
 # TicTacToe
-Tic Tac Toe game I created to learn python.
+Simple Tic Tac toe game I made in python to help me with learning the basics of the language.
