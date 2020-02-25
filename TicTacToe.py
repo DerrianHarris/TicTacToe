@@ -24,16 +24,18 @@ def runGame():
     #   000  123  012
     #   000  456  345
     #   000  789  678
-    board = [0, 0, 0, 0, 0, 0, 0, 0, 0]  # blank board
-    # board = [1, 1, 1, 0, 0, 0, 0, 0, 0] #p1 top row win
-    # board = [0, 0, 0, 1, 1, 1, 0, 0, 0] #p1 middle row win
-    # board = [0, 0, 0, 0, 0, 0, 1, 1, 1] #p1 bottom row win
-    # board = [1, 0, 0, 1, 0, 0, 1, 0, 0] #p1 left colomn win
-    # board = [0, 1, 0, 0, 1, 0, 0, 1, 0] #p1 middle colomn win
-    # board = [0, 0, 1, 0, 0, 1, 0, 0, 1] #p1 right colomn win
-    # board = [1, 0, 0, 0, 1, 0, 0, 0, 1]  # p1 neg diag win
-    # board = [0, 0, 1, 0, 1, 0, 1, 0, 0] #p1 pos diag win
-    # board = [1, 2, 1, 2, 1, 2, 2, 1, 2] #draw board
+    board = [0, 0, 0, 0, 0, 0, 0, 0, 0]   # blank board
+
+    # TEST BOARDS
+    # board = [1, 1, 1, 0, 0, 0, 0, 0, 0] # p1 top row win
+    # board = [0, 0, 0, 1, 1, 1, 0, 0, 0] # p1 middle row win
+    # board = [0, 0, 0, 0, 0, 0, 1, 1, 1] # p1 bottom row win
+    # board = [1, 0, 0, 1, 0, 0, 1, 0, 0] # p1 left colomn win
+    # board = [0, 1, 0, 0, 1, 0, 0, 1, 0] # p1 middle colomn win
+    # board = [0, 0, 1, 0, 0, 1, 0, 0, 1] # p1 right colomn win
+    # board = [1, 0, 0, 0, 1, 0, 0, 0, 1] # p1 neg diag win
+    # board = [0, 0, 1, 0, 1, 0, 1, 0, 0] # p1 pos diag win
+    # board = [1, 2, 1, 2, 1, 2, 2, 1, 2] # draw board
 
     # turn can equal either 1 or 2 for the players
     # TODO: create a way to read in the board from a file and also write to
