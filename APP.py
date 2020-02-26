@@ -1,4 +1,5 @@
 import pygame
+from pygame.locals import *
 import time
 from TicTacAi import TicTacAi
 window_size = (500,500)
@@ -15,14 +16,18 @@ Turn = 0
 board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 ai = TicTacAi
 run = True
-isGameOver = False
+isGameOver = [False,False]
 
 
 def doEvent():
     global isGameOver
+    global Turn
+    global board
+    global run
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            global run
+            
             run = False
             
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and isGameOver[0] == False:
@@ -36,24 +41,30 @@ def doEvent():
                 return
             else:
                 return
+        elif event.type == pygame.KEYDOWN and event.key == pygame.locals.K_r:
+            print("Reseting Game..")
+            
+
+            Turn = 0
+            board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+            isGameOver = [False,False]
         
 
 def doLogic():
     global board
     global isGameOver
     isGameOver = checkGameOver(board)
-    if(isGameOver[0]):
-        if(isGameOver[1]):
-            print("Draw!")
-        else:
-            Player = (Turn + 1 ) % 2
-            print("Player " + str(Player+1) + " Wins!")
-    else:
-        if(Turn == 1):
-            spot = ai.takeTurnAI(board)
-            if(spot != -1):
-                board[spot] = 2
-                NextTurn()
+    #if(isGameOver[0]):
+    #    if(isGameOver[1]):
+    #        print("Draw!")
+    #    else:
+    #        Player = (Turn + 1 ) % 2
+    #        print("Player " + str(Player+1) + " Wins!")
+    if(Turn == 1 and not isGameOver[0]):
+        spot = ai.takeTurnAI(board)
+        if(spot != -1):
+            board[spot] = 2
+            NextTurn()
     
 
 def doRender():
@@ -101,6 +112,13 @@ def doRender():
         font = pygame.font.SysFont("comicsansms",70)
         text = font.render(textStr,True,color)
         pos = (w/2,h/2)
+        textRect = text.get_rect()
+        textRect.center = pos
+        pygame.display.get_surface().blit(text,textRect)
+
+        font = pygame.font.SysFont("comicsansms",40)
+        text = font.render("Press R to reset...",True,color)
+        pos = (w/2,(h/2) + 70)
         textRect = text.get_rect()
         textRect.center = pos
         pygame.display.get_surface().blit(text,textRect)
