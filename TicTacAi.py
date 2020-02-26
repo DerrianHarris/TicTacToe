@@ -23,6 +23,7 @@ class TicTacAi:
         elif(last_open(board) != -1):
             return last_open(board)
         else:
+            return -1;
             print("Game should be a draw..... ENDING....")
 
 # can_i_win checks to see if the ai has a winning move
@@ -41,6 +42,7 @@ def can_they_win(board):
 
 
 def corner_open(board):
+    global corners
     corners = [0, 2, 6, 8]
     for i in range(len(corners)):
         if(board[corners[i]] == 0):
@@ -57,7 +59,7 @@ def middle_open(board):
 def last_open(board):
     other = [1, 3, 5, 7]
     for i in range(len(other)):
-        if(board[corners[i]] == 0):
+        if(board[other[i]] == 0):
             return other[i]
     return -1
 

@@ -38,8 +38,7 @@ def runGame():
     # board = [1, 2, 1, 2, 1, 2, 2, 1, 2] # draw board
 
     # turn can equal either 1 or 2 for the players
-    # TODO: create a way to read in the board from a file and also write to
-    # files
+
 
     settings = 0
     ai = TicTacAi
@@ -87,10 +86,6 @@ def takeTurn(board, turn, ai_play, ai):
         return board
     return board
 
-# TODO:
-# checkGameOver need to also return who won in the new system
-# right now it just checks to if there is 3 in a row and not who has that row
-# we then make a guess by whos turn it is
 
 
 def checkGameOver(board):
