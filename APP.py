@@ -6,6 +6,7 @@ window_size = (500,500)
 
 
 
+#TODO: CLEAN CODE!
 
 pygame.init()
 window = pygame.display.set_mode(window_size)
@@ -48,7 +49,8 @@ def doEvent():
             Turn = 0
             board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
             isGameOver = [False,False]
-        
+        elif event.type == pygame.KEYDOWN and event.key == pygame.locals.K_ESCAPE:
+            run = False
 
 def doLogic():
     global board
